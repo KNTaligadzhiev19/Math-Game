@@ -1,41 +1,83 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctime>
 using namespace std;
 
-void drawLine1(size_t count) {
+void drawLine1(size_t count) 
+{
 	cout << " ";
-	for (size_t i = 0; i < count; i++) {
+	for (size_t i = 0; i < count; i++) 
+	{
 		cout << '_';
 	}
 	cout << endl;
 }
-void drawLineType1(char ch1, char ch2, char ch3) {
+void drawLineType1(char ch1, char ch2, char ch3) 
+{
 	cout << "|           |           |__" << ch1 << "__|__" << ch2 << "__|__" << ch3 << "__|           |           |" << endl;
 }
-void drawLineType2(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7) {
+void drawLineType2(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7) 
+{
 	cout << "|     " << ch1 << "     |     " << ch2 << "     |__" << ch3 << "__|__" << ch4 << "__|__" << ch5 << "__|     " << ch6 << "     |     " << ch7 << "     |" << endl;
 }
-void drawLineType3(char ch1, char ch2, char ch3) {
+void drawLineType3(char ch1, char ch2, char ch3) 
+{
 	cout << "|___________|___________|__" << ch1 << "__|__" << ch2 << "__|__" << ch3 << "__|___________|___________|" << endl;
 }
-void drawLineType4_0(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7, char ch8, char ch9, char ch10, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16) {
+void drawLineType4_0(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7, char ch8, char ch9, char ch10, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16) 
+{
 	cout << "|_" << ch1 << "_|_" << ch2 << "_|_" << ch3 << "_|_" << ch4 << "_|_" << ch5 << "_|_" << ch6 << "_|            "  << "     |_" << ch11 << "_|_" << ch12 << "_|_" << ch13 << "_|_" << ch14 << "_|_" << ch15 << "_|_" << ch16 << "_|" << endl;
 }
-void drawLineType4_1(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16) {
+void drawLineType4_1(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16) 
+{
 	cout << "|_" << ch1 << "_|_" << ch2 << "_|_" << ch3 << "_|_" << ch4 << "_|_" << ch5 << "_|_" << ch6 << "_|_________________|_" << ch11 << "_|_" << ch12 << "_|_" << ch13 << "_|_" << ch14 << "_|_" << ch15 << "_|_" << ch16 << "_|" << endl;
 }
-void drawLineType5_0(char ch1, char ch2, char ch3, char ch4) {
+void drawLineType5_0(char ch1, char ch2, char ch3, char ch4) 
+{
 	cout << "|   |   |   |   |   |   |     " << ch1 << " " << ch2 << " " << ch3 << " " << ch4 << "     |   |   |   |   |   |   |" << endl;
 }
-void drawLineType5_1(char ch1, char ch2, char ch3,char ch4) {
+void drawLineType5_1(char ch1, char ch2, char ch3,char ch4) 
+{
 	cout << "|___|___|___|___|___|___|     " << ch1 << " " << ch2 << " " << ch3 << " " << ch4 << "     |___|___|___|___|___|___|" << endl;
 }
-void drawLineType6(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7, char ch8, char ch9, char ch10, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16, char ch17, char ch18, char ch19, char ch20){
+void drawLineType6(char ch1, char ch2, char ch3, char ch4, char ch5, char ch6, char ch7, char ch8, char ch9, char ch10, char ch11, char ch12, char ch13, char ch14, char ch15, char ch16, char ch17, char ch18, char ch19, char ch20)
+{
 	cout << "| " << ch1 << " | " << ch2 << " | " << ch3 << " | " << ch4 << " | " << ch5 << " | " << ch6 << " |  " << ch7 << ch8 << ch9 << ch10 << "     " << ch11 << ch12 << ch13 << ch14 << "  | " << ch15 << " | " << ch16 << " | " << ch17 << " | " << ch18 << " | " << ch19 << " | " << ch20 << " |" << endl;
 }
 
-int main() {
+void randomNumber()
+{
+	srand((unsigned)time(0));
+	printf("Your dice has been rolled! You got: \n ");
+	int result = 1 + (rand() % 6);
+	printf("%d \n", result);
+
+	/*if (result == 6) {
+		cout << "Excellent!";
+	}
+	else if (result == 5) {
+		cout << "Cool!";
+	}
+	else if (result == 4) {
+		cout << "Nice!";
+	}
+	else if (result == 3) {
+		cout << "Nice try!"
+	}
+	else if (result == 2) {
+		cout << "Gooood!";
+	}
+	else {
+		cout << "Well!"
+	}*/
+}
+
+int main() 
+{
 	char Ludo[104];
-	for (char i = 0; i < 104; ++i) {
+	for (char i = 0; i < 104; ++i) 
+	{
 		Ludo[i] = ' ';
 	}
 	drawLine1(65);
@@ -56,11 +98,6 @@ int main() {
 	drawLineType1(Ludo[56], Ludo[84], Ludo[50]);
 	drawLineType2(Ludo[14],Ludo[15], Ludo[55], Ludo[83], Ludo[51], Ludo[10], Ludo[11]);
 	drawLineType3(Ludo[54], Ludo[53], Ludo[52]);
+	cout << endl;
+	randomNumber();
 }
-  
-
-
-
-
-
-
