@@ -1,24 +1,8 @@
 #include <iostream>
 using namespace std;
-char cells[10] = { ' ','1','2','3','4','5','6','7','8','9' };
-void DrawBoardtype1() {
-	cout << "     |     |     " << endl;
-}
-void DrawBoardtype2(char ch1, char ch2, char ch3) {
-	cout << "  " << ch1 << "  |  " << ch2 << "  |  " << ch3 << endl;
-}
-void DrawBoardtype3() {
-	for (int i = 1; i <= 3; i++) {
-		if (i == 3) cout << "_____" << endl;
-		else cout << "_____|";
-	}
-}
-void DrawBoardtype4() {
-	for (int i = 1; i <= 3; i++) {
-		if (i == 3) cout << "      " << endl;
-		else cout << "     |";
-	}
-}
+
+char cells[10] = { 'o','1','2','3','4','5','6','7','8','9' };
+
 int inspectWin()
 {
     if (cells[1] == cells[2] && cells[2] == cells[3])
@@ -54,16 +38,96 @@ int inspectWin()
         return 2;
 }
 
+// Function Which Display The Board
+void board()
+{
+    system("cls");
+    cout << "\n\n\t\tTic Tac Toe\n\n";
+
+    cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+    cout << endl;
+
+    cout << "\t     |     |     " << endl;
+    cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+    cout << "\t_____|_____|_____" << endl;
+    cout << "\t     |     |     " << endl;
+
+    cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+    cout << "\t_____|_____|_____" << endl;
+    cout << "\t     |     |     " << endl;
+
+    cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+    cout << "\t     |     |     " << endl << endl;
+}
+
+int inspectWin();
+void board();
+
 int main()
 {
-	
-	DrawBoardtype1();
-	DrawBoardtype2(cells[1], cells[2], cells[3]);
-	DrawBoardtype3();
-	DrawBoardtype4();
-	DrawBoardtype2(cells[4], cells[5], cells[6]);
-	DrawBoardtype3();
-	DrawBoardtype4();
-	DrawBoardtype2(cells[7], cells[8], cells[9]);
-	DrawBoardtype1();
+    int player = 1, flag, choice;
+
+    char mark;
+    do
+    {
+        board();
+        player = (player % 2) ? 1 : 2;
+
+        cout << "Player " << player << ", enter a number:  ";
+        cin >> choice;
+
+        mark = (player == 1) ? 'X' : 'O';
+
+        if (choice == 1 && cells[1] == '1')
+
+            cells[1] = mark;
+        else if (choice == 2 && cells[2] == '2')
+
+            cells[2] = mark;
+        else if (choice == 3 && cells[3] == '3')
+
+            cells[3] = mark;
+        else if (choice == 4 && cells[4] == '4')
+
+            cells[4] = mark;
+        else if (choice == 5 && cells[5] == '5')
+
+            cells[5] = mark;
+        else if (choice == 6 && cells[6] == '6')
+
+            cells[6] = mark;
+        else if (choice == 7 && cells[7] == '7')
+
+            cells[7] = mark;
+        else if (choice == 8 && cells[8] == '8')
+
+            cells[8] = mark;
+        else if (choice == 9 && cells[9] == '9')
+
+            cells[9] = mark;
+        else
+        {
+            cout << "Invalid move ";
+
+            player--;
+            cin.ignore();
+            cin.get();
+        }
+        flag = inspectWin();
+
+        player++;
+    } while (flag == 2);
+    board();
+    if (flag == 1)
+
+        cout << "==>\aPlayer " << --player << " win ";
+    else
+        cout << "==>\aGame draw";
+
+    cin.ignore();
+    cin.get();
+    return 0;
 }
