@@ -63,9 +63,6 @@ void board()
     cout << "\t     |     |     " << endl << endl;
 }
 
-int inspectWin();
-void board();
-
 int main()
 {
     int player = 1, flag, choice;
