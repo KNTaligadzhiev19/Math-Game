@@ -124,11 +124,17 @@ int main()
         player++;
     } while (flag == 2);
     board();
-    if (flag == 1)
+    if (flag == 1) {
 
         cout << "==>\aPlayer " << --player << " win ";
+        system("color f1");
+    }
     else
+    {
+        system("color f2");
         cout << "==>\aGame draw";
+
+    }
 
     cin.ignore();
     cin.get();
