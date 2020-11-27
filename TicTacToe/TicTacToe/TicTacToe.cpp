@@ -3,6 +3,8 @@ using namespace std;
 
 char cells[10] = { 'o','1','2','3','4','5','6','7','8','9' };
 
+
+
 int inspectWin()
 {
     if (cells[1] == cells[2] && cells[2] == cells[3])
@@ -41,6 +43,7 @@ int inspectWin()
 // Function Which Display The Board
 void board()
 {
+    system("color f0");
     system("cls");
     cout << "\n\n\t\tTic Tac Toe\n\n";
 
@@ -65,6 +68,7 @@ void board()
 
 int main()
 {
+    system("color f7");
     int player = 1, flag, choice;
 
     char mark;
@@ -77,6 +81,7 @@ int main()
         cin >> choice;
 
         mark = (player == 1) ? 'X' : 'O';
+
 
         if (choice == 1 && cells[1] == '1')
 
@@ -107,6 +112,7 @@ int main()
             cells[9] = mark;
         else
         {
+            system("color f4");
             cout << "Invalid move ";
 
             player--;
