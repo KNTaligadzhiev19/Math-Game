@@ -27,7 +27,161 @@ void board()
 	cout << "\t     |     |     " << endl << endl;
 }
 
-int checkwin()
+void ifWinHorizontal()
+{
+	system("cls");
+
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+	cout << "\t     |     |     " << endl;
+	if (cells[1] == cells[2] && cells[2] == cells[3])
+	{
+		cout << "\t--" << cells[1] << "--|--" << cells[2] << "--|--" << cells[3] << "--" << endl;
+	}
+	else { cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl; }
+	cout << "\t_____|_____|_____" << endl;
+	cout << "\t     |     |     " << endl;
+	if (cells[4] == cells[5] && cells[5] == cells[6])
+	{
+		cout << "\t--" << cells[4] << "--|--" << cells[5] << "--|--" << cells[6] << "--" << endl;
+	}
+	else { cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl; }
+	cout << "\t_____|_____|_____" << endl;
+	cout << "\t     |     |     " << endl;
+	if (cells[7] == cells[8] && cells[8] == cells[9])
+	{
+		cout << "\t--" << cells[7] << "--|--" << cells[8] << "--|--" << cells[9] << "--" << endl;
+	}
+	else { cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl; }
+	cout << "\t     |     |     " << endl << endl;
+}
+void ifWinVertical1()
+{
+	system("cls");
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+
+
+	cout << "\t  |  |     |     " << endl;
+	cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+	cout << "\t__|__|_____|_____" << endl;
+	cout << "\t  |  |     |     " << endl;
+
+	cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+	cout << "\t__|__|_____|_____" << endl;
+	cout << "\t  |  |     |     " << endl;
+
+	cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+	cout << "\t  |  |     |     " << endl << endl;
+
+}
+void ifWinVertical2()
+{
+	system("cls");
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+	if (cells[2] == cells[5] && cells[5] == cells[8])
+	{
+		system("cls");
+		cout << "\n\n\t\tTic Tac Toe\n\n";
+
+		cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+		cout << endl;
+
+		cout << "\t     |  |  |     " << endl;
+		cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+		cout << "\t_____|__|__|_____" << endl;
+		cout << "\t     |  |  |     " << endl;
+
+		cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+		cout << "\t_____|__|__|_____" << endl;
+		cout << "\t     |  |  |     " << endl;
+
+		cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+		cout << "\t     |  |  |     " << endl << endl;
+	}
+}
+void ifWinVertical3()
+{
+	system("cls");
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+
+	cout << "\t     |     |  |   " << endl;
+	cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+	cout << "\t_____|_____|__|__" << endl;
+	cout << "\t     |     |  |  " << endl;
+
+	cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+	cout << "\t_____|_____|__|__" << endl;
+	cout << "\t     |     |  |  " << endl;
+
+	cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+	cout << "\t     |     |  |  " << endl << endl;
+}
+void ifWinDiagonal1()
+{
+	system("cls");
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+
+	cout << "\t     |     |   /  " << endl;
+	cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+	cout << "\t_____|_____|/____" << endl;
+	cout << "\t     |    /|     " << endl;
+
+	cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+	cout << "\t_____|/____|_____" << endl;
+	cout << "\t    /|     |     " << endl;
+
+	cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+	cout << "\t/    |     |     " << endl << endl;
+}
+void ifWinDiagonal2()
+{
+	system("cls");
+	cout << "\n\n\t\tTic Tac Toe\n\n";
+
+	cout << "\tPlayer 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+
+	cout << "\t \\   |     |     " << endl;
+	cout << "\t  " << cells[1] << "  |  " << cells[2] << "  |  " << cells[3] << endl;
+
+	cout << "\t____\\|_____|_____" << endl;
+	cout << "\t     |\\    |     " << endl;
+
+	cout << "\t  " << cells[4] << "  |  " << cells[5] << "  |  " << cells[6] << endl;
+
+	cout << "\t_____|____\\|_____" << endl;
+	cout << "\t     |     |\\    " << endl;
+
+	cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl;
+
+	cout << "\t     |     |   \\ " << endl << endl;
+}
+int inspectWin()
 {
 	if (cells[1] == cells[2] && cells[2] == cells[3])
 
@@ -136,7 +290,7 @@ int main()
 						choice = rand() % 9;
 					}
 				}
-				flag = checkwin();
+				flag = inspectWin();
 				player++;
 				board();
 			}
@@ -178,12 +332,37 @@ int main()
 					cout << "Invalid move ";
 					player--;
 				}
-				flag = checkwin();
+				flag = inspectWin();
 
 				player++;
 			}
 		} while (flag == 2);
-		board();
+
+		if (cells[1] == cells[2] && cells[2] == cells[3] || cells[4] == cells[5] && cells[5] == cells[6] || cells[7] == cells[8] && cells[8] == cells[9])
+		{
+			ifWinHorizontal();
+		}
+		else if (cells[1] == cells[4] && cells[4] == cells[7])
+		{
+			ifWinVertical1();
+		}
+		else if (cells[2] == cells[5] && cells[5] == cells[8])
+		{
+			ifWinVertical2();
+		}
+		else if (cells[3] == cells[6] && cells[6] == cells[9])
+		{
+			ifWinVertical3();
+		}
+		else if (cells[3] == cells[5] && cells[5] == cells[7])
+		{
+			ifWinDiagonal1();
+		}
+		else if (cells[1] == cells[5] && cells[5] == cells[9])
+		{
+			ifWinDiagonal2();
+
+		}
 		if (flag == 1)
 		{
 			cout << "==>\aPlayer " << --player << " win ";
@@ -195,7 +374,7 @@ int main()
 			system("color f2");
 		}
 	}
-	else
+	else if (x == 2)
 	{
 		do
 		{
@@ -242,11 +421,35 @@ int main()
 				system("color f0");
 			}
 
-			flag = checkwin();
+			flag = inspectWin();
 
 			player++;
 		} while (flag == 2);
-		board();
+		if (cells[1] == cells[2] && cells[2] == cells[3] || cells[4] == cells[5] && cells[5] == cells[6] || cells[7] == cells[8] && cells[8] == cells[9])
+		{
+			ifWinHorizontal();
+		}
+		else if (cells[1] == cells[4] && cells[4] == cells[7])
+		{
+			ifWinVertical1();
+		}
+		else if (cells[2] == cells[5] && cells[5] == cells[8])
+		{
+			ifWinVertical2();
+		}
+		else if (cells[3] == cells[6] && cells[6] == cells[9])
+		{
+			ifWinVertical3();
+		}
+		else if (cells[3] == cells[5] && cells[5] == cells[7])
+		{
+			ifWinDiagonal1();
+		}
+		else if (cells[1] == cells[5] && cells[5] == cells[9])
+		{
+			ifWinDiagonal2();
+
+		}
 
 		if (flag == 1) {
 			cout << "==>\aPlayer " << --player << " win ";
@@ -260,6 +463,9 @@ int main()
 		cin.ignore();
 		cin.get();
 	}
+	else
+	{
+		cout << "Invalid Input";
+	}
 	return 0;
 }
-
