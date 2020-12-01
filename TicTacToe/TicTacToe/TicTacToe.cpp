@@ -1,9 +1,8 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-char cells[10] = { 'o','1','2','3','4','5','6','7','8','9' };
 
-void board()
+void board(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -27,7 +26,7 @@ void board()
 	cout << "\t     |     |     " << endl << endl;
 }
 
-void ifWinHorizontal()
+void ifWinHorizontal(char cells[])
 {
 	system("cls");
 
@@ -56,7 +55,7 @@ void ifWinHorizontal()
 	else { cout << "\t  " << cells[7] << "  |  " << cells[8] << "  |  " << cells[9] << endl; }
 	cout << "\t     |     |     " << endl << endl;
 }
-void ifWinVertical1()
+void ifWinVertical1(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -81,7 +80,7 @@ void ifWinVertical1()
 	cout << "\t  |  |     |     " << endl << endl;
 
 }
-void ifWinVertical2()
+void ifWinVertical2(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -112,7 +111,7 @@ void ifWinVertical2()
 		cout << "\t     |  |  |     " << endl << endl;
 	}
 }
-void ifWinVertical3()
+void ifWinVertical3(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -135,7 +134,7 @@ void ifWinVertical3()
 
 	cout << "\t     |     |  |  " << endl << endl;
 }
-void ifWinDiagonal1()
+void ifWinDiagonal1(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -158,7 +157,7 @@ void ifWinDiagonal1()
 
 	cout << "\t/    |     |     " << endl << endl;
 }
-void ifWinDiagonal2()
+void ifWinDiagonal2(char cells[])
 {
 	system("cls");
 	cout << "\n\n\t\tTic Tac Toe\n\n";
@@ -181,7 +180,7 @@ void ifWinDiagonal2()
 
 	cout << "\t     |     |   \\ " << endl << endl;
 }
-int inspectWin()
+int inspectWin(char cells[])
 {
 	if (cells[1] == cells[2] && cells[2] == cells[3])
 
@@ -218,17 +217,19 @@ int inspectWin()
 
 int main()
 {
+	char cells[10] = { 'o','1','2','3','4','5','6','7','8','9' };
+
 	int player = 1, flag, choice;
 	int x;
 	char mark;
 	system("color f0");
-	cout << "\t\t\tEnter 1 to play with computer\t\tEnter 2 to play with friend" << endl;
+	cout << "\t\t\tEnter 1 to play with computer\t\tEnter 2 to play with friend\n" << endl;
 	cin >> x;
 	if (x == 1)
 	{
 		do
 		{
-			board();
+			board(cells);
 
 			if (player % 2 == 1)
 				player = 1;
@@ -290,9 +291,9 @@ int main()
 						choice = rand() % 9;
 					}
 				}
-				flag = inspectWin();
+				flag = inspectWin(cells);
 				player++;
-				board();
+				board(cells);
 			}
 			else if (player == 1)
 			{
@@ -327,12 +328,18 @@ int main()
 				else if (choice == 9 && cells[9] == '9')
 
 					cells[9] = mark;
+				else if (choice < 1 || choice >9)
+				{
+					system("color f4");
+					cout << "Incorrect input. Restart your program";
+					return 0;
+				}
 				else
 				{
 					cout << "Invalid move ";
 					player--;
 				}
-				flag = inspectWin();
+				flag = inspectWin(cells);
 
 				player++;
 			}
@@ -340,27 +347,27 @@ int main()
 
 		if (cells[1] == cells[2] && cells[2] == cells[3] || cells[4] == cells[5] && cells[5] == cells[6] || cells[7] == cells[8] && cells[8] == cells[9])
 		{
-			ifWinHorizontal();
+			ifWinHorizontal(cells);
 		}
 		else if (cells[1] == cells[4] && cells[4] == cells[7])
 		{
-			ifWinVertical1();
+			ifWinVertical1(cells);
 		}
 		else if (cells[2] == cells[5] && cells[5] == cells[8])
 		{
-			ifWinVertical2();
+			ifWinVertical2(cells);
 		}
 		else if (cells[3] == cells[6] && cells[6] == cells[9])
 		{
-			ifWinVertical3();
+			ifWinVertical3(cells);
 		}
 		else if (cells[3] == cells[5] && cells[5] == cells[7])
 		{
-			ifWinDiagonal1();
+			ifWinDiagonal1(cells);
 		}
 		else if (cells[1] == cells[5] && cells[5] == cells[9])
 		{
-			ifWinDiagonal2();
+			ifWinDiagonal2(cells);
 
 		}
 		if (flag == 1)
@@ -378,7 +385,7 @@ int main()
 	{
 		do
 		{
-			board();
+			board(cells);
 			player = (player % 2) ? 1 : 2;
 			cout << "Player " << player << ", enter a number:  ";
 			cin >> choice;
@@ -411,6 +418,12 @@ int main()
 			else if (choice == 9 && cells[9] == '9')
 
 				cells[9] = mark;
+			else if (choice < 1 || choice >9)
+			{
+				system("color f4");
+				cout << "Incorrect input. Restart your program";
+				return 0;
+			}
 			else
 			{
 				system("color f4");
@@ -421,33 +434,33 @@ int main()
 				system("color f0");
 			}
 
-			flag = inspectWin();
+			flag = inspectWin(cells);
 
 			player++;
 		} while (flag == 2);
 		if (cells[1] == cells[2] && cells[2] == cells[3] || cells[4] == cells[5] && cells[5] == cells[6] || cells[7] == cells[8] && cells[8] == cells[9])
 		{
-			ifWinHorizontal();
+			ifWinHorizontal(cells);
 		}
 		else if (cells[1] == cells[4] && cells[4] == cells[7])
 		{
-			ifWinVertical1();
+			ifWinVertical1(cells);
 		}
 		else if (cells[2] == cells[5] && cells[5] == cells[8])
 		{
-			ifWinVertical2();
+			ifWinVertical2(cells);
 		}
 		else if (cells[3] == cells[6] && cells[6] == cells[9])
 		{
-			ifWinVertical3();
+			ifWinVertical3(cells);
 		}
 		else if (cells[3] == cells[5] && cells[5] == cells[7])
 		{
-			ifWinDiagonal1();
+			ifWinDiagonal1(cells);
 		}
 		else if (cells[1] == cells[5] && cells[5] == cells[9])
 		{
-			ifWinDiagonal2();
+			ifWinDiagonal2(cells);
 
 		}
 
@@ -465,6 +478,7 @@ int main()
 	}
 	else
 	{
+		system("color f4");
 		cout << "Invalid Input";
 	}
 	return 0;
