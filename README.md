@@ -7,25 +7,30 @@
 
 
 ## Team
-> 1. NPBrankov19 - Scrum trainer
+> 1. **NPBrankov19** - **Scrum trainer**
 
-   - Email: [NPBrankov19@codingburgas.bg](mailto:NPBrankov19@codingburgas.bg)
+   - ***Email***: [***NPBrankov19@codingburgas.bg***](mailto:NPBrankov19@codingburgas.bg)
+   - ***GitHub profile***: [***NPBrankov19****](https://github.com/NPBrankov19)
 
-> 2. RGIvanov19 - Code Checker
+> 2. **RGIvanov19** - **Code Checker**
 
-   - Email: [RGIvanov19@codingburgas.bg](mailto:RGIvanov19@codingburgas.bg)
+   - ***Email***: [***RGIvanov19@codingburgas.bg***](mailto:RGIvanov19@codingburgas.bg)
+   - ***GitHub profile***: [***RGIvanov19***](https://github.com/RGIvanov19)
 
-> 3. KNTaligadzhiev19 - C++ Developer
+> 3. **KNTaligadzhiev19** - **C++ Developer**
 
-   - Email: [KNTaligadzhiev19@codingburgas.bg](mailto:KNTaligadzhiev19@codingburgas.bg)
+   - ***Email***: [***KNTaligadzhiev19@codingburgas.bg***](mailto:KNTaligadzhiev19@codingburgas.bg)
+   - ***GitHub profile***: [***KNTaligadzhiev19***](https://github.com/KNTaligadzhiev19)
 
-> 4. MCBerberov19 - C++ Developer
+> 4. **MCBerberov19** - **C++ Developer**
 
-   - Email: [MCBerberov19@codingburgas.bg](mailto:MCBerberov19@codingburgas.bg)
+   - ***Email***: [***MCBerberov19@codingburgas.bg***](mailto:MCBerberov19@codingburgas.bg)
+   - ***GitHub profile***: [***MCBerberov19***](https://github.com/MCBerberov19)
 
-> 5. VNStoyanov19 - Front-End Developer
+> 5. **VNStoyanov19** - **Front-End Developer**
 
-   - Email: [VNStoyanov19@codingburgas.bg](mailto:VNStoyanov19@codingburgas.bg)
+   - ***Email***: [***VNStoyanov19@codingburgas.bg***](mailto:VNStoyanov19@codingburgas.bg)
+   - ***GitHub profile***: [***VezcoJ***](https://github.com/VezcoJ)
 
 
 ## Game
@@ -34,3 +39,14 @@
 
 ## Technologies
 > The technologies we used for our work were Microsoft Teams for communication, Git and GitHub for code storage and teamwork on the code, Visual Studio for the code editor, PowerPoint for preparing a presentation, Word for preparing documentation, and OneDrive for sharing files.
+
+
+## Installation
+
+Paste this in cmd:
+ 
+````
+git init
+git clone https://github.com/KNTaligadzhiev19/Math-Game.git
+````
+Have fun!
