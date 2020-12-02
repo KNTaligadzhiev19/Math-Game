@@ -215,13 +215,14 @@ int inspectWin(char cells[])
 		return 2;
 }
 
-int main()
+int main(int ag1, int ag2)
 {
 	char cells[10] = { 'o','1','2','3','4','5','6','7','8','9' };
-
-	int player = 1, flag, choice;
+	int player = 1, flag;
+	long long int choice;
 	int x;
 	char mark;
+	system("cls");
 	system("color f0");
 	cout << "\t\t\tEnter 1 to play with computer\t\tEnter 2 to play with friend\n" << endl;
 	cin >> x;
@@ -331,14 +332,23 @@ int main()
 				else if (choice < 1 || choice >9)
 				{
 					system("color f4");
-					cout << "Incorrect input. Restart your program";
-					return 0;
-				}
-				else
-				{
-					cout << "Invalid move ";
+					cout << "Incorrect input. Press Enter to continue";
+					cin.ignore();
+					cin.clear();
+					cin.get();
 					player--;
+					system("color f0");
 				}
+				else if (choice <= 9 || choice >= 1)
+				{
+					system("color f4");
+					cout << "Invalid move. Press Enter to continue";
+					cin.ignore();
+					cin.get();
+					player--;
+					system("color f0");
+				}
+
 				flag = inspectWin(cells);
 
 				player++;
@@ -380,6 +390,9 @@ int main()
 			cout << "==>\aGame draw";
 			system("color f2");
 		}
+		cin.ignore();
+		cin.get();
+
 	}
 	else if (x == 2)
 	{
@@ -420,11 +433,15 @@ int main()
 				cells[9] = mark;
 			else if (choice < 1 || choice >9)
 			{
+				cin.clear();
 				system("color f4");
-				cout << "Incorrect input. Restart your program";
-				return 0;
+				cout << "Incorrect input. Press Enter to continue";
+				cin.ignore();
+				cin.get();
+				player--;
+				system("color f0");
 			}
-			else
+			else if (choice <= 9 || choice >= 1)
 			{
 				system("color f4");
 				cout << "Invalid move ";
@@ -478,8 +495,37 @@ int main()
 	}
 	else
 	{
+		system("cls");
+		cin.clear();
 		system("color f4");
-		cout << "Invalid Input";
+		cout << "Invalid Input. Press Enter to continue.";
+		cin.get();
+
+		if (cin.get() == '\n')
+		{
+			system("cls");
+			main(ag1, ag2);
+		}
 	}
+	system("cls");
+	system("color f0");
+	cout << "\t\t\t\t\t\tPress Enter to play again!\n";
+	if (cin.get() == '\n')
+	{
+		system("color f0");
+		cout << "\t\t\t\t\t\tPress Enter to play again!\n";
+		system("cls");
+		main(ag1, ag2);
+	}
+	else
+	{
+		system("color f0");
+		cout << "\t\t\t\t\t\tPlease press Enter to play again!\n";
+		cin.ignore();
+		cin.get();
+		main(ag1, ag2);
+	}
+	system("cls");
+	system("color f0");
 	return 0;
 }
